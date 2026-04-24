@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head><title>Task 5 - Back Button Data</title></head>
+<body>
+  <h2>Page 1 - Kuch likho</h2>
+  <input type="text" id="myInput" placeholder="Kuch likho..." oninput="saveData()" />
+  <br><br>
+  <button onclick="goToPage2()">Page 2 pe jao</button>
+  <div id="page2" style="display:none; margin-top:20px;">
+    <h2>Page 2</h2>
+    <p>Aap page 2 pe hain!</p>
+    <button   onclick="goBack()">Wapas jao</button>
+  </div>
+
+  <script>
+   
+    function saveData() {
+      sessionStorage.setItem("inputData", document.getElementById("myInput").value);
+    }
+
+    function goToPage2() {
+      document.querySelector("h2").style.display = "none";
+      document.getElementById("myInput").style.display = "none";
+      document.getElementById("page2").style.display = "block";
+    }
+
+    function goBack() {
+      document.querySelector("h2").style.display = "block";
+      document.getElementById("myInput").style.display = "block";
+      document.getElementById("page2").style.display = "none";
+      
+      document.getElementById("myInput").value = sessionStorage.getItem("inputData") || "";
+    }
+  </script>
+</body>
+</html>

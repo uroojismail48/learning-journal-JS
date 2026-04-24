@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>- Cookie Banner</title>
+  <style>
+    #banner {
+      position: fixed; bottom: 0; left: 0; right: 0;
+      background: #333; color: white;
+      padding: 16px; text-align: center;
+      display: none;
+    }
+    #banner button { margin-left: 12px; padding: 8px 16px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h2>Meri Website</h2>
+  <p>Yahan website ka content hai...</p>
+
+  <div id="banner">
+    🍪cookies ???
+    <button onclick="acceptCookies()">Accept</button>
+    <button onclick="declineCookies()">Decline</button>
+  </div>
+
+  <script>
+    function getCookie(name) {
+      const cookies = document.cookie.split("; ");
+      for (let c of cookies) {
+        const [key, val] = c.split("=");
+        if (key === name) return val;
+      }
+      return null;
+    }
+
+    window.onload = function() {
+     
+      if (!getCookie("cookieAccepted")) {
+        document.getElementById("banner").style.display = "block";
+      }
+    };
+
+    function acceptCookies() {
+      const date = new Date();
+      date.setTime(date.getTime() + (5000)); // 30 din
+      document.cookie = "cookieAccepted=true; expires=" + date.toUTCString() + "; path=/";
+      document.getElementById("banner").style.display = "none";
+    }
+
+    function declineCookies() {
+      document.getElementById("banner").style.display = "none";
+    }
+  </script>
+</body>
+</html>
