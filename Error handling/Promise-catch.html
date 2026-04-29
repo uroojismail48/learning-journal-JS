@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>PROMISE - .CATCH </h1>
+    <h3>EK BUTTON PE NUMBER DOUBLE</h3>
+    <input type="text" required  placeholder="LIKHo" id="inp">
+    <button onclick="run()">Check </button>
+    <p id="result"></p>
+    <script>
+        function run(){
+              const val = Number(document.getElementById("inp").value);
+            const result = document.getElementById("result");
+            Promise.resolve(val).then (num => {
+                if (num < 0) throw new Error ("Negative number nahi chalega")
+             if (num === 0) throw new Error("Zero nahi chalega"); 
+            return num * 2;          })
+            .then (doubled => {
+                 result.textContent = "Result: " + doubled;
+            }).catch (err => {
+                  result.textContent = "Error pakda: " + err.message;
+           } )
+        }    </script>
+</body>
+</html>

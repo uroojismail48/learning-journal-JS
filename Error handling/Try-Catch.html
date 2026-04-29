@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRY_CATCH</title>
+</head>
+<body>
+
+    <h1>TrY - CAtch - ERror</h1>
+<input id="myInput" placeholder="hello" type="text">
+<button onclick="parseNUM()">Check</button>
+<p id="result"></p>
+
+<script>
+  function parseNUM() {
+    const str = document.getElementById("myInput").value; 
+
+    try {
+      const num = Number(str);                 
+      if (isNaN(num)) throw new Error("not a num");  
+        if (Number(str) === num){
+ document.getElementById("result").textContent = "sahi";
+}
+if(str === ""){
+     document.getElementById("result").textContent = "LIKHO";
+    
+}
+      return num;
+    } catch (error) {
+      document.getElementById("result").textContent = "invalid input";
+      return "invalid input";
+    }
+
+
+
+  }
+
+</script>
+
+</body>
+</html>

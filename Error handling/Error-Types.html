@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="ii">
+    <button onclick="btn()">c</button>
+    <p id="aa"></p>
+    <script>
+  function btn() {
+            const pp = document.getElementById("ii").value;
+            const output = document.getElementById("aa");
+
+            try {
+                if (pp === "type") {
+                    null.property;          // TypeError
+                } else if (pp === "ref") {
+                    undeclaredVar;          // ReferenceError
+                } else if (pp === "syntax") {
+                    eval("{");              // SyntaxError
+                } else {
+                    output.textContent = "Input: " + pp;
+                    return;
+                }
+            } catch (e) {
+                if (e instanceof TypeError) {
+                    output.textContent = "TypeError: " + e.message;
+                } else if (e instanceof ReferenceError) {
+                    output.textContent = "ReferenceError: " + e.message;
+                } else if (e instanceof SyntaxError) {
+                    output.textContent = "SyntaxError: " + e.message;
+                } else {
+                    output.textContent = "Unknown Error: " + e.message;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

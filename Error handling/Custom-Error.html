@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Error Practice</title>
+</head>
+<body>
+    <h2>Custom Error Practice</h2>
+
+    <input id="name" type="text" placeholder="Naam likho">
+    <input id="age" type="number" placeholder="Umar likho">
+    <input id="email" type="text" placeholder="Email likho">
+    <button onclick="register()">Register</button>
+    <p id="result"></p>
+
+    <script>
+
+      
+        class ValidationError extends Error {
+            constructor(message) {
+                super(message);
+                this.name = "ValidationError";
+            }
+        }
+
+        class AgeError extends Error {
+            constructor(message) {
+                super(message);
+                this.name = "AgeError";
+            }
+        }
+
+        class EmailError extends Error {
+            constructor(message) {
+                super(message);
+                this.name = "EmailError";
+            }
+        }
+
+     
+        function validateName(name) {
+            if (name === "") throw new ValidationError("Naam khali nahi hona chahiye");
+            if (name.length < 3) throw new ValidationError("Naam kam az kam 3 letters ka hona chahiye");
+        }
+
+        function validateAge(age) {
+            if (isNaN(age) || age === "") throw new AgeError("Umar number mein likho");
+            if (age < 18) throw new AgeError("Umar 18 se kam nahi honi chahiye");
+            if (age > 100) throw new AgeError("Umar 100 se zyada nahi honi chahiye");
+        }
+
+        function validateEmail(email) {
+            if (email === "") throw new EmailError("Email khali nahi honi chahiye");
+            if (!email.includes("@")) throw new EmailError("Email mein @ hona zaroori hai");
+        }
+
+        
+        function register() {
+            const name  = document.getElementById("name").value.trim();
+            const age   = Number(document.getElementById("age").value);
+            const email = document.getElementById("email").value.trim();
+            const result = document.getElementById("result");
+
+            try {
+                validateName(name);
+                validateAge(age);
+                validateEmail(email);
+
+                result.style.color = "green";
+                result.textContent = "Registration kamyab! Welcome, " + name;
+
+            } catch (e) {
+                result.style.color = "red";
+
+                if (e instanceof ValidationError) {
+                    result.textContent = "Naam Error: " + e.message;
+                } else if (e instanceof AgeError) {
+                    result.textContent = "Umar Error: " + e.message;
+                } else if (e instanceof EmailError) {
+                    result.textContent = "Email Error: " + e.message;
+                } else {
+                    result.textContent = "Unknown Error: " + e.message;
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>

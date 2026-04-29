@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GLOBAL_ERror</title>
+</head>
+<body>
+    <h1>GLOBAL - ERROR - HANDLING</h1>
+    <p id="aa"></p>
+
+    <input id="myInput" placeholder="kuch likho..." type="text">
+    <button onclick="parseNUM()">Check</button>
+    <p id="result"></p>
+
+<script>
+
+ 
+  window.onerror = function(msg, src, line) {
+    document.getElementById("result").textContent = `Global Error: ${msg} at line ${line}`;
+  };
+
+  function parseNUM() {
+    const str = document.getElementById("myInput").value;
+    const result = document.getElementById("result");
+
+    try {
+     
+      if (str === "") {
+        result.textContent = "LIKHO — input khali hai";
+        return;
+      }
+
+      const num = Number(str);
+
+     
+      if (isNaN(num)) throw new Error("not a num");
+
+    
+      result.textContent = "Sahi! Number hai: " + num;
+      return num;
+
+    } catch (error) {
+      result.textContent = "Invalid input: " + error.message;
+      return "invalid input";
+    }
+  }
+
+</script>
+</body>
+</html>
