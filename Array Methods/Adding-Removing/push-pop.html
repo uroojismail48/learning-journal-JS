@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PUSH _ POP - methods</title>
+</head>
+
+<body>
+    <h1>PUSH _ POP - methods</h1>
+    <h3>Array ke end mein 'mango' add karo.</h3>
+    <p id="a"></p>
+    <p id="ab"></p>
+    <h3>Array ke last element ko remove karo aur uski value save karo.</h3>
+    <p id="b"></p>
+    <p id="ba"></p>
+        <p id="bb"></p>
+
+            <h3>Stack ki tarah use karo: 3 items push karo, phir 1 pop karo..</h3>
+    <p id="c"></p>
+    <p id="ca"></p>
+        <p id="cb"></p>
+                 <h3>Ek loop mein 1 se 5 tak ke squares push karo.</h3>
+    <p id="d"></p>
+    <p id="da"></p>
+        <p id="db"></p>
+    <script>
+        const fruits = ["apple", "banana"];
+        document.getElementById("a").textContent = fruits
+        fruits.push("mango")
+        document.getElementById("ab").textContent = fruits
+        const nums = [10, 20, 30, 40];
+                document.getElementById("b").textContent = nums
+        const remo = nums.pop()
+         document.getElementById("ba").textContent = `popped ${remo}`
+           document.getElementById("bb").textContent = nums
+
+           const stack = []
+                       document.getElementById("c").textContent = `[${stack}]`
+           stack.push('a')
+                stack.push('b')
+                   stack.push('c')
+                      document.getElementById("ca").textContent = ` pushed [${stack}]`
+           stack.pop()
+    
+           document.getElementById("cb").textContent = `popped [${stack}]`
+      
+           const squares = []
+           document.getElementById("d").textContent = `[${squares}]`
+         for (let i = 1; i <= 5; i++){
+            squares.push( i * i)
+         }
+   document.getElementById("da").textContent = `[${squares}]`
+   
+   </script>
+</body>
+
+</html>

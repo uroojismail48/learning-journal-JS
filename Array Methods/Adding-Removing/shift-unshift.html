@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHIFT - UNSHIFT</title>
+</head>
+<body>
+    <H1>SHIFT - UNSHIFT</H1>
+        <h3>Array ke pehle element ko remove karo aur uski value lo.</h3>
+            <p id="a"></p>
+    <p id="ab"></p>
+   <p id="ac"></p>
+
+           <h3>Array ke beginning mein 0 add karo.</h3>
+            <p id="b"></p>
+    <p id="ba"></p>
+   <p id="bc"></p>
+
+   <h3>shift() aur unshift() se array ko reverse karo (in-place nahi, manually).</h3>
+               <p id="c"></p>
+    <p id="ca"></p>
+   <p id="cc"></p>
+
+    <script>
+        const queue = ["Ali", "Sara", "Zain"];
+          document.getElementById("a").textContent =  `[${queue} ]`
+        const first = queue.shift();
+          document.getElementById("ab").textContent = ` shifted ${first}`
+                 document.getElementById("ac").textContent =  `[${queue}]`
+
+const nums = [1, 2, 3];
+ document.getElementById("b").textContent =  `[${nums} ]`
+nums.unshift(0)
+    document.getElementById("ba").textContent =  `[${nums} ]`
+
+    const arr = [1, 2, 3, 4];
+     document.getElementById("c").textContent =  `[${arr}]`
+    const rev = [];
+  while (arr.length){
+        rev.unshift(arr.shift())
+          document.getElementById("ca").textContent =  `[${rev}]`
+    }
+    </script>
+</body>
+</html>

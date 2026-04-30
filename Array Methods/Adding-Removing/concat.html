@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONCAT</title>
+</head>
+
+<body>
+    <h1>ConCat - METHOD</h1>
+    <h3>Do arrays ko ek saath jodo aur naya array banao.</h3>
+
+    <p id="ab"></p>
+    <p id="a"></p>
+
+    <h3>Teen arrays ko ek saath merge karo.</h3>
+      <p id="b"></p>
+    <p id="ba"></p>
+    <h3>Ek array mein individual values bhi add karo concat se.</h3>
+       <p id="c"></p>
+    <p id="ca"></p>
+  
+  <script>
+        const a = [1, 2, 3];
+        const b = [4, 5, 6];
+        const result = a.concat(b)
+        document.getElementById("ab").textContent = `[${a}] , [${b}]`
+        document.getElementById("a").textContent = `${result}`
+  
+  
+  const x = [1, 2];
+const y = [3, 4];
+const z = [5, 6];
+const merged = x.concat(y , z)
+  document.getElementById("b").textContent = `[${x}] , [${y}] [${z}]`
+        document.getElementById("ba").textContent = `${merged}`
+  
+        const arr = [1, 2, 3];
+        const rr = arr.concat(4 , 5)
+        document.getElementById("c").textContent = `[${arr}]`
+        document.getElementById("ca").textContent = `${rr}`
+  
+  </script>
+</body>
+
+</html>
