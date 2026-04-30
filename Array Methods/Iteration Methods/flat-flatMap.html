@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flat - flatmap</title>
+</head>
+<body>
+    <div class="cONTAIN">
+        <h1>includes - index of</h1>
+        <h3>
+Use flatMap to get all letters from an array of words.
+        </h3>
+        <p id="a"></p>
+        <p id="ab"></p>
+
+          <h3>
+        </h3>
+        <p id="b"></p>
+        <p id="ba"></p>
+
+             <h3>
+
+        </h3>
+        <p id="c"></p>
+        <p id="ca"></p>
+
+
+             <h3>
+   
+        </h3>
+        <p id="d"></p>
+        <p id="da"></p>
+
+    </div>
+<script>
+ const words = ["hi", "ok"];
+const letters = words.flatMap(w => w.split(""));
+console.log(letters); 
+document.getElementById("b").textContent =   `${words}`
+document.getElementById("ba").textContent =  ` ${letters}`
+</script>
+</body>
+</html>

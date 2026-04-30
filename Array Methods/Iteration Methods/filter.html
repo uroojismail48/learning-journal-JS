@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filter</title>
+</head>
+<body>
+    <div class="co">
+        <h3>FIlters</h3>
+        <h4>Keep only even numbers from the array.
+</h4>
+        <p id="a"></p>
+        <p id="ab"></p>
+
+
+        <h4>Filter users who are 18 or older.
+</h4>
+        <p id="b"></p>
+        <p id="ba"></p>
+
+                <h4>Remove all falsy values from the array.
+</h4>
+        <p id="c"></p>
+        <p id="ca"></p>
+
+        <h4>From a list of numbers, double only the even ones.
+</h4>
+        <p id="d"></p>
+        <p id="da"></p>
+    </div>
+    <script>
+       const nums = [1,2,3,4,5,6,7,8];
+
+       const even = nums.filter( n => n % 2 === 0)
+         document.getElementById("a").textContent = `[ ${nums} ]`
+       document.getElementById("ab").textContent = `${even}`
+ 
+ const users = [
+  {name:"Ali", age:16},
+  {name:"Sara", age:20},
+  {name:"Zain", age:17},
+  {name:"Hina", age:22}
+];
+ const agel = users.filter(u => u.age >= 18)
+   document.getElementById("b").textContent = JSON.stringify(users)
+       document.getElementById("ba").textContent = JSON.stringify(agel)
+ 
+
+       const arr = [0, 1, false, 2, "", 3, null, 4, undefined];
+       const truly = arr.filter(Boolean);
+        document.getElementById("c").textContent = `${arr}`
+         document.getElementById("ca").textContent = `${truly}`
+ 
+       const n = [1,2,3,4,5,6];
+const result = nums
+  .filter(n => n % 2 === 0)
+  .map(n => n * 2);
+ document.getElementById("d").textContent = `${n}`
+         document.getElementById("da").textContent = `${result}`
+ 
+
+
+</script>
+</body>
+</html>

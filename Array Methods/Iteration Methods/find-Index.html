@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>find-index</title>
+</head>
+<body>
+    <div class="cONTAIN">
+        <h1>FIND</h1>
+        <h3>
+Find the first number greater than 10.
+        </h3>
+        <p id="a"></p>
+        <p id="ab"></p>
+
+          <h3>
+  Find the index of the user named 'Zain'.
+        </h3>
+        <p id="b"></p>
+        <p id="ba"></p>
+
+             <h3>
+
+        </h3>
+        <p id="c"></p>
+        <p id="ca"></p>
+
+
+             <h3>
+   
+        </h3>
+        <p id="d"></p>
+        <p id="da"></p>
+
+    </div>
+<script>
+const nums = [2, 5, 12, 8, 20];
+const res = nums.find(n => n > 10);
+document.getElementById("a").textContent = `${nums}`
+document.getElementById("ab").textContent = `${res}`
+const users = [
+  {name:"Ali"},
+  {name:"Sara"},
+  {name:"Zain"}
+];
+
+const idx = users.findIndex(u => u.name === "Zain")
+document.getElementById("b").textContent = JSON.stringify(users)
+document.getElementById("ba").textContent = `${idx}`
+</script>
+</body>
+</html>

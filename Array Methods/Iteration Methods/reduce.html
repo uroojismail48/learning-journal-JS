@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reduce</title>
+</head>
+<body>
+    <div class="cON">
+        <h1>REDUCE</h1>
+        <h3>
+            Calculate the sum of all numbers.
+        </h3>
+        <p id="a"></p>
+        <p id="ab"></p>
+
+          <h3>
+      Find the maximum value using reduce.
+        </h3>
+        <p id="b"></p>
+        <p id="ba"></p>
+
+             <h3>
+     Count occurrences of each item in the array.
+        </h3>
+        <p id="c"></p>
+        <p id="ca"></p>
+
+
+             <h3>
+    Flatten a nested array using reduce.
+        </h3>
+        <p id="d"></p>
+        <p id="da"></p>
+
+    </div>
+<script>
+const nums = [10, 20, 30, 40];
+const sum = nums.reduce((acc, n ) => acc + n , 0)
+document.getElementById("ab").textContent = `${sum}`
+document.getElementById("a").textContent = `${nums}`
+
+
+const numn = [3, 7, 1, 9, 4];
+const max = numn.reduce((acc , n) => n > acc ? n  : acc , -Infinity);
+document.getElementById("ba").textContent = `${max}`
+document.getElementById("b").textContent = `${numn}`
+
+const fruits = ["apple","banana","apple","orange","banana","apple"];
+const count = fruits.reduce((acc, fruit) => {
+  acc[fruit] = (acc[fruit] || 0) + 1;
+  return acc;
+}, {});
+document.getElementById("c").textContent = `${fruits}`
+document.getElementById("ca").textContent = JSON.stringify(count)
+
+const nested = [[1,2],[3,4],[5,6]];
+const flat = nested.reduce((acc , arr ) => acc.concat(arr), [])
+document.getElementById("d").textContent = `${nested}`
+document.getElementById("da").textContent = `${flat}`
+
+
+
+</script>
+</body>
+</html>

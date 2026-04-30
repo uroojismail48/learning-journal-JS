@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filter</title>
+</head>
+<body>
+    <div class="co">
+        <h3>every - some</h3>
+        <h4>Check if ALL numbers are positive. Then check if ANY is > 10.
+        <p id="a"></p>
+        <p id="ab"></p>
+
+
+        <h4>
+</h4>
+        <p id="b"></p>
+        <p id="ba"></p>
+
+                <h4>
+</h4>
+        <p id="c"></p>
+        <p id="ca"></p>
+
+        <h4>
+
+        </h4>
+
+        <p id="d"></p>
+        <p id="da"></p>
+    </div>
+    <script>
+    const nums = [1, 5, 3, 12, 7];
+    const allpos = nums.every( n => n> 0);   ; 
+    const anyBig = nums.some(n => n > 10); 
+
+document.getElementById("a").textContent = `${allpos}`
+document.getElementById("ba").textContent = `${anyBig}`
+</script>
+</body>
+</html>

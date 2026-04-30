@@ -1,0 +1,50 @@
+  
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAP - Method</title>
+  </head>
+  <body>
+    <div class="container">
+    <h1>MAP - MEthod</h1>
+    <p>    //  <!--Q 1 Double every number in the array. --></p>
+     <p id="a"></p> 
+    <p id="ab"></p>
+<!-- // -->
+ <p>//Q2 Extract just the names from an array of user objects.</p>
+  <p id="b"></p> 
+    <p id="ba"></p>
+
+    <!-- // -->
+     <p>//Q2 .Convert all strings to uppercase.</p>
+  <p id="c"></p> 
+    <p id="ca"></p>
+    </div>
+    
+   <script>
+    //  <!--Q 1 Double every number in the array. -->
+    const num = [1, 2,3,4]
+    const double = num.map(n => n * 2);
+     document.getElementById("a").textContent = `  ARRAY  ${num}`
+   document.getElementById("ab").textContent = `${double}`
+//Q2 Extract just the names from an array of user objects.
+const users = [
+  {name:"Ali", age:25},
+  {name:"Sara", age:30},
+  {name:"Zain", age:22}
+];
+const names = users.map(u => u.name);
+ document.getElementById("b").textContent = ` ${users}`
+   document.getElementById("ba").textContent = `${names}`
+
+//Q2 .Convert all strings to uppercase.
+const words = ["hello", "world", "js"];
+const uper = words.map( w => w.toUpperCase())
+document.getElementById("c").textContent = ` ${words}`
+   document.getElementById("ca").textContent = `${uper}`
+   </script>
+  </body>
+  </html>
+  

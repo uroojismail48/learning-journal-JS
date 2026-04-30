@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>includes - index of</title>
+</head>
+<body>
+    <div class="cONTAIN">
+        <h1>includes - index of</h1>
+        <h3>
+Find Check if 'mango' is in the array. Find its index.
+        </h3>
+        <p id="a"></p>
+        <p id="ab"></p>
+
+          <h3>
+        </h3>
+        <p id="b"></p>
+        <p id="ba"></p>
+
+             <h3>
+
+        </h3>
+        <p id="c"></p>
+        <p id="ca"></p>
+
+
+             <h3>
+   
+        </h3>
+        <p id="d"></p>
+        <p id="da"></p>
+
+    </div>
+<script>
+    const fruits = ["apple","mango","banana"];
+    const has = fruits.includes("mango");   
+const idx = fruits.indexOf("mango");    
+document.getElementById("b").textContent =   `${fruits}`
+document.getElementById("ba").textContent =  `indexOf Mango is ${idx}`
+</script>
+</body>
+</html>
