@@ -1,11 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SLICE_SPLICE</title>
+    <title>SLICE - SPLICE</title>
 </head>
+
 <body>
-    
+    <H1>SLICE - SPLICE</H1>
+    <h3>Q1 Array se index 1 se 3 tak ka portion nikalo (3 included nahi).</h3>
+    <p id="a"></p>
+    <p id="ab"></p>
+    <p id="ac"></p>
+
+    <h3>Q2 Last 2 elements nikalo without knowing array length.</h3>
+    <p id="b"></p>
+    <p id="ba"></p>
+    <p id="bc"></p>
+
+    <h3>Q3 Array ki shallow copy banao slice se.</h3>
+    <p id="c"></p>
+    <p id="ca"></p>
+    <p id="cc"></p>
+    <h3>Index 2 par se 1 element remove karo.</h3>
+    <p id="d"></p>
+    <p id="da"></p>
+    <p id="dc"></p>
+    <h3>.Index 1 par naya element insert karo, kuch delete kiye bagair.</h3>
+    <p id="e"></p>
+    <p id="ea"></p>
+    <p id="ec"></p>
+    <h3>.Index 1 par 2 elements replace karo naye values se.</h3>
+    <p id="f"></p>
+    <p id="fa"></p>
+    <p id="fc"></p>
+    <h3>.splice() se array se duplicate value dhundo aur remove karo.</h3>
+    <p id="g"></p>
+    <p id="ga"></p>
+    <p id="gc"></p>
+
+    <script>
+        const arr = [10, 20, 30, 40, 50];
+        document.getElementById("a").textContent = `[${arr}]`
+        const part = arr.slice(1, 3)
+        document.getElementById("ab").textContent = `[${part}]`
+
+        const arr2 = [1, 2, 3, 4, 5];
+        const last = arr2.slice(-2)
+        document.getElementById("b").textContent = `[${arr2}]`
+        document.getElementById("ba").textContent = `[${last}]`
+
+        const original = [1, 2, 3];
+        const copy = original.slice();
+        copy.push(4)
+        document.getElementById("c").textContent = `orignal[${original}]`
+        document.getElementById("ca").textContent = ` copy [${copy}]`
+
+        const arr3= ["a","b","c","d"];
+        document.getElementById("d").textContent = `[${arr3}]`
+        arr3.splice(2 , 1);
+        document.getElementById("da").textContent = `  [${arr3}]`
+
+
+        const arr4 = [1, 2, 4, 5];
+        document.getElementById("e").textContent = `[${arr4}]`
+        arr4.splice (2 , 0 , 3)
+        document.getElementById("ea").textContent = `[${arr4}]`
+   
+      const arr5 = ["Ali","X","Y","Hina"];
+           document.getElementById("f").textContent = `[${arr5}]`
+   arr5.splice(1, 2, "Sara", "Zain");
+         document.getElementById("fa").textContent = `[${arr5}]`
+   
+         const arr6 = [1, 2, 3, 2, 4];
+          document.getElementById("g").textContent = `[${arr6}]`
+   
+         const  idx = arr6.indexOf(2 ,1 )
+         arr6.splice(idx, 1)
+          document.getElementById("ga").textContent = `[${arr6}]`
+   
+   </script>
 </body>
+
 </html>
