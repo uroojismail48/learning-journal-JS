@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IS Array</title>
+</head>
+<body>
+<div class="vom">
+    <h1>IS Array</h1>
+
+    <h3>Q1 — processData()</h3>
+    <p id="a"></p>
+    <p id="ab"></p>
+    <p id="ac"></p>
+
+    <h3>Q2 — flattenIfArray()</h3>
+    <p id="b"></p>
+    <p id="ba"></p>
+    <p id="bb"></p>
+</div>
+
+<script>
+    // Q1
+    function processData(input) {
+        if (!Array.isArray(input)) {
+            return "Array nahi hai";
+        }
+        return input.length;
+    }
+
+    document.getElementById("a").textContent  = processData([10, 20, 30]);
+    document.getElementById("ab").textContent = processData("hello");    
+    document.getElementById("ac").textContent = processData([]);          
+
+    // Q2
+    function flattenIfArray(val) {
+        if (!Array.isArray(val)) {
+            return val;
+        }
+        return val.flat(); 
+    }
+
+    document.getElementById("b").textContent  = flattenIfArray([1, [2, 3], [4]]); 
+    document.getElementById("ba").textContent = flattenIfArray(42);               
+    document.getElementById("bb").textContent = flattenIfArray("JS");             
+</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Of</title>
+</head>
+<body>
+    <div class="vom">
+        <h1>ARRAY OF</h1>
+        <h3>Array.of() se [7, 8, 9] banao.</h3>
+        <p id="a"></p>
+   <p id="ab"></p>
+     <p id="ac"></p>
+      <h3>Sirf ek number [42] ka array banao Array.of() se.</h3>
+        <p id="b"></p>
+   <p id="ba"></p>
+     <p id="bc"></p>
+      <h3>Mixed types ka array banao — number, string, boolean — Array.of() se.</h3>
+        <p id="c"></p>
+   <p id="cb"></p>
+     <p id="cc"></p>
+      <h3>new Array() ka trap khud dekho. Phir Array.of() se fix karo.</h3>
+   <h4>const trap = new Array(5);   <br>   // kya hoga?
+const fixed = /* your code */;  // [5] <br>
+console.log(trap.length);  // ??? <br>
+console.log(fixed.length); // 1</h4>
+      <p id="d"></p>
+   <p id="db"></p>
+     <p id="dc"></p>
+      <p id="dd"></p>
+      <h3></h3>
+        <p id="e"></p>
+   <p id="eb"></p>
+     <p id="ec"></p>
+    </div>
+    <script>
+        const arr = Array.of(7 , 8 , 9)
+        document.getElementById("a").textContent = `[${arr}]`
+ 
+ const newa = new Array(9 , 9 ,9)
+  document.getElementById("ab").textContent = `[${newa}]`
+ 
+// const  neww = new Array(3) 
+Array.of(3)
+  document.getElementById("ac").textContent = `[${Array.of(3)}]`
+ 
+  const arr2 = Array.of(42)
+    document.getElementById("b").textContent = `[${arr2}]`
+ 
+    const  arr3 = Array.of (21 , "hello" , true ) 
+      document.getElementById("c").textContent = `[${arr3}]`
+  
+      const trap = new Array(5)
+      const fixed = Array.of (5)
+
+        document.getElementById("d").textContent = ` trap [${trap}]`
+    document.getElementById("db").textContent = `fixed [${fixed}]`
+    document.getElementById("dc").textContent = `trap length is : [${trap.length}]`
+  document.getElementById("dd").textContent = ` fixed length is : [${fixed.length}]`
+  
+  
+ </script>
+</body>
+</html>

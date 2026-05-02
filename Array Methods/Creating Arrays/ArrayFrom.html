@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array From</title>
+</head>
+<body>
+    <div class="vom">
+        <h1>ARRAY from</h1>
+        <h3>String 'JS' ko Array.from() se characters ki array banao.</h3>
+        <p id="a"></p>
+   <p id="ab"></p>
+     <p id="ac"></p>
+      <h3>Array.from() se 1 se 5 tak ki array banao.</h3>
+        <p id="b"></p>
+   <p id="ba"></p>
+     <p id="bc"></p>
+      <h3>Set mein duplicates hain — Array.from() se unique values ki array banao.</h3>
+        <p id="c"></p>
+   <p id="cb"></p>
+     <p id="cc"></p>
+      <h3>Array.from() se 0 se 4 tak ke squares ki array banao.</h3>
+        <p id="d"></p>
+   <p id="db"></p>
+     <p id="dc"></p>
+      <h3>Map object ko Array.from() se array of arrays mein convert karo.</h3>
+        <p id="e"></p>
+   <p id="eb"></p>
+     <p id="ec"></p>
+           <h3>Array.from() se ek alphabet array banao — 'a' se 'e' tak — charCodeAt use karo.</h3>
+        <p id="f"></p>
+   <p id="fb"></p>
+     <p id="fc"></p>
+    </div>
+    <script>
+        //Q1 
+        const arr = Array.from('JS')
+        document.getElementById("a").textContent = `alag alag characters [${arr}]`
+  
+  //Q2
+ const arr2 = Array.from({length: 5}, (_, i) => i + 1);
+        document.getElementById("b").textContent = `[${arr2}]`
+  //Q3
+  const set = new Set (([10, 20, 10, 30, 20]))
+  //set duplicates remove krta hai array se 
+  const arr3 = Array.from(set)
+    document.getElementById("c").textContent = `[${arr3}]`;
+  //Q4
+
+  const square = Array.from({length : 5}, (_, i) => i * i) ;
+   document.getElementById("d").textContent = `[${square}]`;
+  //Q5
+  const map = new Map ([['a', 1], ['b', 2], ['c', 3]]);
+  document.getElementById("e").textContent = `[${map}]`;
+
+  const arr5 = Array.from(map);
+     document.getElementById("eb").textContent = `[[${arr5}]]`;
+//Q6
+const alpha = Array.from({length : 5} , (_, i) => String.fromCharCode(97 + i)) 
+   document.getElementById("f").textContent = `[${alpha}]`;
+
+ </script>
+</body>
+</html>
