@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>join</title>
+</head>
+<body>
+<!-- reverse() — Array ko ulta karo -->
+    <div class="vom">
+        <h1>Reverse METHOD</h1>
+        <h3> Array ko ulta karo</h3>
+        <p id="a"></p>
+            <p id="ab"></p>
+
+            <h3>
+                Array ko reverse karo — original
+                 safe rakhna zaroori ha
+                  </h3>
+               <p id="b"></p>
+            <p id="ba"></p>
+
+                    <h3>String "JavaScript" ko reverse karo.</h3>
+               <p id="c"></p>
+            <p id="ca"></p>
+            <p id="cb"></p>
+    
+                     <h3>umbers ki array ko sort karo descending order mein — sort() aur reverse() chain karo.
+                         Original array safe rakhna.</h3>
+               <p id="d"></p>
+            <p id="da"></p>
+            <p id="db"></p>
+         </div>
+<script>
+    //q1
+    const arr = [1, 2, 3, 4, 5];
+          document.getElementById("a").textContent = `[${arr}]`
+ 
+    arr.reverse()
+      document.getElementById("ab").textContent = `${arr}`
+ //q2
+ const arr2 = [10, 20, 30, 40, 50];
+   document.getElementById("b").textContent = `[${arr2}]`
+ 
+ const rev = [...arr2].reverse();
+   document.getElementById("ba").textContent = `[${rev}]`
+ 
+
+ //q3
+ const str = "JavaScript"
+    document.getElementById("c").textContent = str;
+ const revv = str.split("").reverse().join("")
+       document.getElementById("ca").textContent = `${revv}`
+ 
+ //q4
+ const nums = [3, 1, 8, 2, 5, 9, 4];
+const desc = [...nums].sort((a, b) => a - b).reverse()
+  document.getElementById("da").textContent = `${desc}`
+   document.getElementById("d").textContent = `[${nums}]`
+ 
+</script>
+</body>
+</html>

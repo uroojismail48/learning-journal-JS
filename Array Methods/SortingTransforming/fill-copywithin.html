@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fill-copywithin</title>
+</head>
+<body>
+    <div class="vom">
+        <h1>fill-copywithin</h1>
+        <h3>5 zeros ki array banao, phir sab ko 1 se replace karo index 2 se aakhir tak.</h3>
+        <p id="a"></p>
+            <p id="ab"></p>
+
+            <h3>3x3 ka grid banao jisme sab values 0 hon —
+                 Array.from() aur fill() 
+                dono use karo.</h3>
+               <p id="b"></p>
+            <p id="ba"></p>
+
+                    <h3></h3>
+               <p id="c"></p>
+            <p id="ca"></p>
+    </div>
+    <script>
+        //Q1
+        const arr = new Array(5).fill(0)
+       arr.fill(1 , 2)
+        // document.getElementById("a").textContent = arr
+   console.log(arr)
+//Q2
+const grid = Array.from({length : 3}, () => new Array(3).fill(0) )
+console.log(grid);
+   
+   </script>
+</body>
+</html>

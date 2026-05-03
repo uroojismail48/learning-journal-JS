@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-string</title>
+</head>
+
+<body>
+    <!-- 
+    toString() — Array ko String mein badlo
+    // koi argument nahi leta
+// original array mutate nahi hoti -->
+    <div class="vom">
+        <h1>To STrING method</h1>
+        <h3>
+            Array ko toString()
+            se string banao aur typeof se confirm karo ke
+            string hai.</h3>
+        <p id="a"></p>
+        <p id="ab"></p>
+
+        <h3>Nested array ko toString() se convert karo
+            — result guess karo pehle. </h3>
+        <p id="b"></p>
+        <p id="ba"></p>
+
+        <h3>toString() aur JSON.stringify()
+             ka farq clearly dekho — array aur 
+             object dono pe test karo.</h3>
+        <p id="d"></p>
+        <p id="da"></p>
+
+        <h3></h3>
+        <p id="a"></p>
+        <p id="ba"></p>
+
+
+    </div>
+    <script>
+        //1
+        const arr = [10, 20, 30, 40];
+        const str = arr.toString();
+        document.getElementById("a").textContent = (arr);
+        document.getElementById("ab").textContent = (typeof str);
+
+
+        //2
+
+        const nested = [[1, 2, 3], [4, 5], [6]];
+        const str2 = nested.toString()
+        document.getElementById("b").textContent = (nested);
+
+        document.getElementById("ba").textContent = (str2);
+
+//3
+const arr3 = [1, 2, 3];
+const obj = {name: "Ali", age: 20};
+
+console.log(arr3.toString())
+console.log(JSON.stringify(arr3))
+console.log(obj.toString())
+console.log(JSON.stringify(obj))
+    </script>
+</body>
+
+</html>

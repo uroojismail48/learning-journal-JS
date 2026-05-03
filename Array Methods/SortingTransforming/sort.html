@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sort</title>
+</head>
+<body>
+    <div class="co">
+        <h3>Sort</h3>
+        <h4>Sort an array of numbers in descending order.
+        <p id="a"></p>
+        <p id="ab"></p>
+
+
+        <h4>
+            Numbers ko ascending aur descending dono mein sort karo. 
+            Original safe rakhna.
+</h4>
+        <p id="b"></p>
+        <p id="ba"></p>
+   <p id="bc"></p>
+                <h4>
+                    Users ko 
+                    age ke hisaab se
+                    ascending sort karo.
+</h4>
+        <p id="c"></p>
+        <p id="ca"></p>
+
+        <h4>
+
+Pehle age se sort karo, agar age same ho to name se alphabetically sort karo.
+        </h4>
+
+        <p id="d"></p>
+        <p id="da"></p>
+    </div>
+    <script>
+        //1
+const nums = [3, 1, 8, 2, 5];
+const sort = [...nums].sort((a , b ) => b - a );
+document.getElementById("a").textContent = `[ ${nums} ]`
+document.getElementById("ab").textContent = `[${sort}]`
+//2
+const num2 = [5, 3, 8, 1, 9, 2];
+const acs = [...num2].sort((a , b)  => a - b)
+const dcs = [...num2].sort((a , b)  => b - a)
+document.getElementById("b").textContent = `[${num2}]`
+document.getElementById("ba").textContent = ` ascending ${acs}`
+document.getElementById("bc").textContent = `descending ${dcs}`
+
+
+//3
+const users = [
+  {name: "Zain", age: 22},
+  {name: "Ali",  age: 17},
+  {name: "Hina", age: 25},
+  {name: "Sara", age: 19},
+];
+document.getElementById("c").textContent = JSON.stringify(users)
+
+const sorted = [...users].sort((a, b) => a.age - b.age)
+document.getElementById("ca").textContent = JSON.stringify(sorted)
+
+//4
+const use = [
+  {name: "Zain", age: 22},
+  {name: "Ali",  age: 17},
+  {name: "Sara", age: 22},
+  {name: "Hina", age: 17},
+];
+const u = [...use].sort((a, b) => {
+    if(a.age !== b.age){
+        return a.age - b.age;
+    }
+    return a.name.localeCompare(b.name)
+})
+document.getElementById("d").textContent = JSON.stringify(use);
+document.getElementById("da").textContent = JSON.stringify(u);
+</script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>join</title>
+</head>
+<body>
+<!-- 
+// join() → array to string
+// split() → string to array — dono opposite hain! -->
+    <div class="vom">
+        <h1>JOIN METHOD</h1>
+        <h3></h3>
+        <p id="a"></p>
+            <p id="ab"></p>
+
+            <h3>
+                Array ke words ko space se jodo ek sentence banao.
+               </h3>
+               <p id="b"></p>
+            <p id="ba"></p>
+
+                    <h3>Numbers ki array ko dash - se jodo, phir us string ko wapas array mein convert karo split() se.</h3>
+               <p id="c"></p>
+            <p id="ca"></p>
+            <p id="cb"></p>
+    
+                     <h3>join() aur map() mila ke objects ki array ko readable string banao.</h3>
+               <p id="d"></p>
+            <p id="da"></p>
+            <p id="db"></p>
+         </div>
+    <script>
+
+//q1
+const a = ["A" , "B " , "C"]
+  document.getElementById("a").textContent = `[${a}]`
+ 
+a.join()
+document.getElementById("ab").textContent = a
+ 
+//q2
+const words = ["Mera", "naam", "Ali", "hai"];
+const sen = words.join(" ")
+document.getElementById("b").textContent = `[${words}]`
+ 
+document.getElementById("ba").textContent = sen
+ 
+
+//q3
+const nums = [1, 2, 3, 4, 5];
+document.getElementById("c").textContent = `[${nums}]`
+ 
+const str = nums.join("-");
+const back = str.split("-");
+document.getElementById("ca").textContent = `${str}`
+ document.getElementById("cb").textContent = `[${back}]`
+ 
+
+ //q4
+ const users = [
+  {name: "Ali",  age: 20},
+  {name: "Sara", age: 25},
+  {name: "Zain", age: 22}
+];
+ document.getElementById("d").textContent = JSON.stringify(users)
+ 
+const res = users.map(u => `${u.name} (${u.age})`).join(" |")
+   document.getElementById("da").textContent = `${res}`
+ 
+
+// Pehle map() se har object ko string mein badla
+// phir join() se sab ek string mein jod diya
+   </script>
+</body>
+</html>
