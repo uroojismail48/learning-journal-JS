@@ -1,0 +1,18 @@
+Most   Important   Methods 
+Method        	Use
+includes()    	search
+slice()	        extract
+replace()        replace
+split()	        array banana
+trim()	        spaces remove
+toUpperCase()  	uppercase
+toLowerCase()	 lowercase
+indexOf()	    position find
+startsWith()	 beginning check
+endsWith()	      ending check
+
+Strings internally:
+
+UTF-16 encoding use karti hain
+immutable hoti hain
+methods new string return karte hain
