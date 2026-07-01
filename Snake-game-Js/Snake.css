@@ -1,0 +1,54 @@
+*{
+    margin:0;
+    padding : 0;
+}
+body, html {
+    background: #000;
+    color: whitesmoke;
+        width: 100%;
+            height: 100%;
+
+}
+section{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    gap : 10px;
+}
+.infos{
+   
+    padding: 40px 30px;
+    display: flex;
+    justify-content: space-between;
+}
+.board{
+    border: 2px solid white;
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(30px, 1fr));
+    grid-template-rows: repeat(auto-fill , minmax(30px, 1fr));
+}
+main, section{
+    width: 100%;
+    height: 100%;
+}
+.info{
+    display: flex;
+    gap: 20px;
+    border-radius: 20px;
+    padding: 7px 10px; 
+    border: 1px solid rgba(255, 255, 255, 0.336);
+}
+.block {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #333;
+    box-sizing: border-box;
+}
+.fill{
+    background: rgba(55, 156, 101, 0.658);
+}
+.food{
+background: rgb(52, 202, 52);    
+}
