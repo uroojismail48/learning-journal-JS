@@ -2,19 +2,17 @@ const board = document.querySelector(".board");
 
 const blockWidth = 30;
 const blockHeight = 30;
+const cols = Math.floor(board.clientWidth / blockWidth);
+const rows = Math.floor(board.clientHeight / blockHeight);
 
 const blocks = [];
 let direction = "right";
-
-const cols = Math.floor(board.clientWidth / blockWidth);
-const rows = Math.floor(board.clientHeight / blockHeight);
 
 const snake = [
     { x: 5, y: 5 },
     { x: 4, y: 5 },
     { x: 3, y: 5 }
 ];
-
 const food = {
     x: Math.floor(Math.random() * cols),
     y: Math.floor(Math.random() * rows)
@@ -50,7 +48,7 @@ function render() {
 render();
 
 const intervalId = setInterval(() => {
-    let head;
+    let head; 
 
     if (direction === "right") {
         head = {
