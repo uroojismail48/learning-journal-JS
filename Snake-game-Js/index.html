@@ -1,41 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snake - GAME</title>
-    <link rel="stylesheet" href="Snake.css">
+    <title>Snake Game</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #13270f, #000000, #2c642f);
+            overflow: hidden;
+        }
+
+        .container {
+            width: 420px;
+            max-width: 90%;
+            padding: 50px 30px;
+            text-align: center;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, .15);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, .4);
+        }
+
+        h1 {
+            font-size: 48px;
+            color: #4cff4c;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+            text-shadow: 0 0 15px #4cff4c;
+        }
+
+        p {
+            color: #ddd;
+            font-size: 18px;
+            margin-bottom: 45px;
+        }
+
+        button {
+            border: none;
+            background: #4cff4c;
+            border-radius: 50px;
+            transition: .3s;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+ 
+        button a {
+            display: block;
+            padding: 18px 55px;
+            color: #111;
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .credit {
+            margin-top: 35px;
+            color: #aaa;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+    </style>
+
 </head>
+
 <body>
-    <main>
-        <section>
-            <div class="infos">
-                <div class="info"><h3>
-                    high score : 
-                </h3>
-            <span id="high-score">0</span>
-            </div>
 
-                <div class="info">
-                    <h3>
-                        Score :
-                    </h3>
-                    <span id="score">0</span>
-                </div>
+    <div class="container">
 
-                    <div class="info">
-                        <h3>
-                     Time : 
-                        </h3>
-                        <span id="time">00</span>
-                    </div>
-            </div>
-            <div class="board">
+        <h1>Snake Game</h1>
 
+        <p>Classic Snake Game made by <strong>UROOJ</strong></p>
 
-            </div>
-        </section>
-    </main>
-    <script src="Snake.js"></script>
+        <button>
+            <a href="Snake.html">▶ Start Game</a>
+        </button>
+
+        <div class="credit">
+            Eat food • Grow longer • Don't hit the wall!
+        </div>
+
+    </div>
+
 </body>
+
 </html>
