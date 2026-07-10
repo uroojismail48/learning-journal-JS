@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>Categories</h4>
+<label><input type="checkbox" value="mobile" class="cat"> Mobile</label>
+<label><input type="checkbox" value="laptop" class="cat"> Laptop</label>
+<label><input type="checkbox" value="accessory" class="cat"> Accessory</label>
+
+<hr>
+
+<div class="item" data-category="mobile">iPhone</div>
+<div class="item" data-category="laptop">Dell Laptop</div>
+<div class="item" data-category="accessory">Headphones</div>
+<div class="item" data-category="mobile">Samsung</div>
+<script>
+const checkboxes = document.querySelectorAll(".cat");
+const items = document.querySelectorAll(".item");
+
+checkboxes.forEach(cb => {
+  cb.addEventListener("change", filterItems);
+});
+
+function filterItems() {
+  const selected = Array.from(checkboxes)
+    .filter(cb => cb.checked)
+    .map(cb => cb.value);
+
+  items.forEach(item => {
+    const category = item.dataset.category;
+
+    if (selected.length === 0 || selected.includes(category)) {
+      item.style.display = "block";
+    } else {
+      item.style.display = "none";
+    }
+  });
+}
+</script>
+
+</body>
+</html>

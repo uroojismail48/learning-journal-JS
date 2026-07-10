@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Color Generator</title>
+</head>
+<body>
+
+<h2>Background Color Generator</h2>
+
+<script>
+setInterval(() => {
+  let r = Math.floor(Math.random() * 256);
+  let g = Math.floor(Math.random() * 256);
+  let b = Math.floor(Math.random() * 256);
+
+  document.body.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+}, 1000);
+</script>
+
+</body>
+</html>

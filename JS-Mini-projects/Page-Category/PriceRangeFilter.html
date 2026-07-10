@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="minPrice" placeholder="Min Price">
+<input type="number" id="maxPrice" placeholder="Max Price">
+<button onclick="filterPrice()">Filter</button>
+
+<ul id="products">
+  <li data-price="2500">Nokia – Rs 2500</li>
+  <li data-price="32000">Tecno – Rs 32000</li>
+  <li data-price="55000">Vivo – Rs 55000</li>
+  <li data-price="250000">iPhone – Rs 250000</li>
+</ul>
+<script>
+
+function filterPrice(){
+  let min = Number(document.getElementById("minPrice").value) || 0;
+  let max = Number(document.getElementById("maxPrice").value) || Infinity;
+
+  let items = document.querySelectorAll("#products li");
+
+  items.forEach(item => {
+    let price = Number(item.dataset.price);
+    item.style.display =
+      price >= min && price <= max ? "list-item" : "none";
+  });
+}
+</script>
+</body>
+</html>

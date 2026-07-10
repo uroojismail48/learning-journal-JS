@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<input type="text" id="search" class="form-control mb-3" placeholder="Search product">
+
+<div class="row" id="products">
+  <div class="col item" data-name="iphone">iPhone</div>
+  <div class="col item" data-name="samsung">Samsung</div>
+  <div class="col item" data-name="nokia">Nokia</div>
+</div>
+<script>
+const search = document.getElementById("search");
+const items = document.querySelectorAll(".item");
+
+search.addEventListener("input", () => {
+  let val = search.value.toLowerCase();
+
+  items.forEach(item => {
+    let name = item.dataset.name;
+    item.style.display = name.includes(val) ? "block" : "none";
+  });
+});
+</script>
+
+
+</body>
+</html>
