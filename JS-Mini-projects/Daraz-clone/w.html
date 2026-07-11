@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+    <head>
+<title>Daraz-Clone</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <!-- Bootstrap CSS v5.3.8 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+            crossorigin="anonymous"
+        />
+
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+        
+            body {
+                background-color: black;
+                color: aliceblue;
+            }
+        </style>
+    </head>
+
+    <body>
+<header style="height: 16vh;background: rgb(255, 85, 0); border: 2px solid rgb(246, 35, 28); ">
+    <div class="div"
+        style="height: 3vh; text-transform: uppercase; font-size: smaller; letter-spacing: 1px; gap: 30px; display: flex;  justify-content:right; margin-right: 140px ;">
+        <span>Save More on App</span>
+        <span>Sell on app</span>
+        <span>helP&Support</span>
+        <span>Login</span>
+        <span>signup</span>
+        <span>translate</span>
+    </div>
+
+    <div class="navbar" style=" display: flex  ;         
+           justify-content: center;    ">
+
+
+        <div class="searcch" style=" width:70%; display: flex; gap: 30px; align-items: center; ">
+            <div class="icon">
+                <img src="./src/logo1.png" height="100px" alt="">
+
+            </div>
+            <input placeholder="Search on Daraz" type="text"
+                style="border: 2px solid black;width: 64%; height: 6vh;background: white; outline:none; border: 1px solid white; padding:0px 15px">
+            <button style="height: 5vh; background: none; border:none">
+                <img src="./src/shopping-cart.png" height="30px" alt="">
+            </button>`
+        </div>
+    </div>
+</header>
+        <main style="display: flex; justify-content: center;">
+ <section class="crousel" style="border: 2px solid white; width: 70%; ">
+          <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
+            <ol class="carousel-indicators">
+                <li
+                    data-bs-target="#carouselId"
+                    data-bs-slide-to="0"
+                    class="active"
+                    aria-current="true"
+                    aria-label="First slide"
+                ></li>
+                <li
+                    data-bs-target="#carouselId"
+                    data-bs-slide-to="1"
+                    aria-label="Second slide"
+                ></li>
+                <li
+                    data-bs-target="#carouselId"
+                    data-bs-slide-to="2"
+                    aria-label="Third slide"
+                ></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+                <div class="carousel-item active">
+                    <img
+                     src="./src/logo1.png" 
+                     height="400px"   
+                        class="w-100 d-block"
+                        alt="First slide"
+                    />
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Title</h3>
+                        <p>Description</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img
+                   src="./src/logo1.png" 
+                   height="400px"   
+                        class="w-100 d-block"
+                        alt="Second slide"
+                    />
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Title</h3>
+                        <p>Description</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img
+src="./src/logo1.png"  height="400px"                       class="w-100 d-block"
+                        alt="Third slide"
+                    />
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Title</h3>
+                        <p>Description</p>
+                    </div>
+                </div>
+            </div>
+            <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselId"
+                data-bs-slide="prev"
+            >
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselId"
+                data-bs-slide="next"
+            >
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+          
+  
+            </section>
+            <section class="side" style="border: 2px solid white; width: 16%;">
+                
+                <div class="sidediv">
+                    <div class="divss"  style="border: 2px solid white; width: 100% ; height: 10vh;">
+                        <h2 >Try daraz app</h2>
+                    </div>
+                    <div class="divss" style="border: 2px solid white; width: 100%; height: 25vh;">
+                                <h2>Try daraz app</h2>
+                    </div>
+                    <div class="divss" style="border: 2px solid white; width: 100%; height: 20vh;">
+                                <h2>Try daraz app</h2>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <!-- place footer here -->
+        </footer>
+        <!-- Bootstrap JavaScript Bundle (includes Popper) -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>
