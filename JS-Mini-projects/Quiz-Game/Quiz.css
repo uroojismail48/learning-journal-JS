@@ -1,5 +1,5 @@
 body{
-background-color: black;
+background-color: rgb(158, 128, 170);
 color: white;
 }
 .app{
@@ -9,7 +9,7 @@ color: white;
     justify-content: center;
 flex-direction: column;
     border-radius: 40px;
-    width: 50%;
+    width: 45%;
 align-items: center;
 background-color: rgb(226, 197, 255);
 }
@@ -23,7 +23,7 @@ height: 90vh;
 }
 .head{
 text-align: center;
-width: 70%;
+width: 80%;
     border-radius: 40px;
     background-color: rgb(231, 117, 183);
 }

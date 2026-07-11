@@ -112,7 +112,7 @@ function SelectAns(e) {
 
     Array.from(AnsBtn.children).forEach(button => {
         if (button.dataset.correct === "true") {
-            button.style.backgroundColor = "pink";
+            button.style.backgroundColor = "green";
         }
 
         button.disabled = true;
