@@ -23,7 +23,6 @@ const Questions = [
             { text: "HTML", correct: false }
         ]
     },
-
     {
         question: "Which company developed JavaScript?",
         answer: [
@@ -32,7 +31,6 @@ const Questions = [
             { text: "Google", correct: false }
         ]
     },
-
     {
         question: "Which method prints something in the browser console?",
         answer: [
@@ -49,7 +47,6 @@ const Questions = [
             { text: "define", correct: false }
         ]
     },
- 
     {
         question: "What does CSS stand for?",
         answer: [
@@ -59,53 +56,58 @@ const Questions = [
         ]
     }
 ];
-const questionEl = document.querySelector(".question")
-const AnsBtn = document.querySelector(".ans")
-const nextbtn = document.querySelector(".next")
+
+const questionEl = document.querySelector(".question");
+const AnsBtn = document.querySelector(".ans");
+const nextbtn = document.querySelector(".next");
 
 let currentIndex = 0;
 let score = 0;
 
 function startGame() {
-    currentIndex = 0
-    score = 0
-    nextbtn.innerHTML = "Next"
-    showQuestion()
-
+    currentIndex = 0;
+    score = 0;
+    nextbtn.innerHTML = "Next";
+    showQuestion();
 }
 
 function showQuestion() {
-    resetState()
-    let CurrentQues = Questions[currentIndex]
-    let QuesNo = currentIndex + 1
+    resetState();
 
-    questionEl.innerHTML = QuesNo + "." + CurrentQues.question
+    const CurrentQues = Questions[currentIndex];
+    const QuesNo = currentIndex + 1;
+
+    questionEl.innerHTML = `${QuesNo}. ${CurrentQues.question}`;
 
     CurrentQues.answer.forEach(answer => {
-        const button = document.createElement("button")
-        button.innerHTML = answer.text
-        button.classList.add("anss")
-        AnsBtn.appendChild(button)
-        if(answer.correct)
-        {
-            button.dataset.correct = answer.correct
+        const button = document.createElement("button");
+        button.innerHTML = answer.text;
+        button.classList.add("anss");
+
+        if (answer.correct) {
+            button.dataset.correct = "true";
         }
-        button.addEventListener("click", SelectAns)
+
+        button.addEventListener("click", SelectAns);
+        AnsBtn.appendChild(button);
     });
 }
+
 function resetState() {
-    nextbtn.style.display = "none"
+    nextbtn.style.display = "none";
+
     while (AnsBtn.firstChild) {
-        AnsBtn.removeChild(AnsBtn.firstChild)
+        AnsBtn.removeChild(AnsBtn.firstChild);
     }
 }
+
 function SelectAns(e) {
     const selectedBtn = e.target;
     const isCorrect = selectedBtn.dataset.correct === "true";
 
     if (isCorrect) {
-        selectedBtn.style.backgroundColor = "pink";
         score++;
+        selectedBtn.style.backgroundColor = "green";
     } else {
         selectedBtn.style.backgroundColor = "red";
     }
@@ -119,17 +121,28 @@ function SelectAns(e) {
     });
 
     nextbtn.style.display = "block";
-
-    nextbtn.addEventListener("click", () => {
-    currentIndex++;
-
-        if (currentIndex < Questions.length) {
-            showQuestion();
-        } else {
-      
-        }
-    });
-    
 }
+
+function showScore() {
+    resetState();
+
+    questionEl.innerHTML = `<h2>Your Score: ${score} / ${Questions.length}</h2>`;
+
+    nextbtn.innerHTML = "Play Again";
+    nextbtn.style.display = "block";
+}
+
+nextbtn.addEventListener("click", () => {
+
+    if (currentIndex < Questions.length - 1) {
+        currentIndex++;
+        showQuestion();
+    } else if (nextbtn.innerHTML === "Next") {
+        showScore();
+    } else {
+        startGame();
+    }
+
+});
 
 startGame();
