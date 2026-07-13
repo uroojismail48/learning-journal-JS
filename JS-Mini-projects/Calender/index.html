@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calender</title>
+    <link rel="stylesheet" href="Calender.css">
 </head>
 <body>
     <div class="container">
@@ -20,42 +21,6 @@
             </div>
         </div>
     </div>
-    <script>
-    const date = document.querySelector(".date");
-    const month = document.querySelector(".month");
-    const day = document.querySelector(".day");
-    const year = document.querySelector(".year");
-
-        const today = new Date()
-    const weekDays = [
-        "Sunday",
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday"
-    ];
-    const allMonths = [
-            "January",
-            "February",
-            "March",
-            "April",
-            "May",
-            "June",
-            "July",
-            "August",
-            "September",
-            "October",
-            "November",
-            "December"
-        ];
-
-        date.innerHTML  = (today.getDate()<10 ? "0" : "") + today.getDate()
-        day.innerHTML = weekDays[today.getDay()]
-
-        month.innerHTML =allMonths[today.getMonth()]
-        year.innerHTML = today.getFullYear()
-</script>
+<script src="Calender.js"></script>
 </body>
 </html>

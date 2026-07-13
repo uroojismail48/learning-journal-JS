@@ -1,0 +1,103 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#792121,#d05265);
+}
+
+.container{
+    text-align:center;
+}
+
+.container h1{
+    color:#fff;
+    font-size:40px;
+    margin-bottom:30px;
+    letter-spacing:1px;
+}
+
+.cal{
+    width:420px;
+    height:220px;
+    display:flex;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 15px 35px rgba(49, 47, 47, 0.3);
+}
+
+.left{
+    width:60%;
+    background:#fff;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.right{
+    width:40%;
+    background:#ff4d4d;
+    color:#fff;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.date{
+    font-size:80px;
+    font-weight:bold;
+    color:#333;
+}
+
+.day{
+    font-size:28px;
+    color:#666;
+    margin-top:10px;
+}
+
+.month{
+    font-size:30px;
+    font-weight:bold;
+}
+
+.year{
+    margin-top:10px;
+    font-size:26px;
+}
+
+@media(max-width:500px){
+
+    .cal{
+        width:90vw;
+        height:180px;
+    }
+
+    .date{
+        font-size:60px;
+    }
+
+    .day{
+        font-size:22px;
+    }
+
+    .month{
+        font-size:24px;
+    }
+
+    .year{
+        font-size:22px;
+    }
+
+    .container h1{
+        font-size:30px;
+    }
+}
