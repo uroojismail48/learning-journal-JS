@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calender</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Today is ...</h1>
+        <div class="cal">
+            <div class="left">
+                <p class="date">0</p>
+                <p class="day">Sunday</p>
+
+            </div>
+            <div class="right">
+                <p class="month">january</p>
+                <p class="year">2024</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        const date = document.getElementsByClassName(".date")
+    const month = document.getElementsByClassName(".month")        
+      const day = document.getElementsByClassName(".day")
+        const year = document.getElementsByClassName(".year")
+
+
+        const today = new Date()
+    const weekDays = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+    ];
+    const allMonths = [
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"
+        ];
+
+        date.innerHTML  = (today.getDate()<10 ? "0" : "") + today.getDate()
+        day.innerHTML = weekDays[today.getDay()]
+
+        month.innerHTML =allMonths[today.getMonth()]
+        year.innerHTML = today.getFullYear()
+</script>
+</body>
+</html>
