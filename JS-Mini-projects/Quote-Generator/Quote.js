@@ -14,7 +14,7 @@ function getQuote() {
     }catch(error)
     {
  quote.innerText = "Failed to load quote.";
-        author.innerText = "";
+        author.innerText = "";+
         console.error(error);
     }
 }

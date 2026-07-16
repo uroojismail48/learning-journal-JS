@@ -6,7 +6,6 @@ function go(){
 
     let birth = new Date(box.value)
     let today = new Date()
-   
     let age = today.getFullYear() - birth.getFullYear();
     let month = today.getMonth()  - birth.getMonth()
 
